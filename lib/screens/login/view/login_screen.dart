@@ -110,7 +110,7 @@ class LoginScreen extends StatelessWidget {
                   height: 40,
                 ),
                 SubmitButton(
-                    onTap: () {},
+                    onTap: () {context.go("/home_screen");},
                     text: "Login",
                     textColor: AppColor.submitBtnTextWhite,
                     borderColor: AppColor.primaryBtnBorderColor),
