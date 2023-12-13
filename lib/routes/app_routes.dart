@@ -9,8 +9,8 @@ final router = GoRouter(
     GoRoute(
       name: 'login', // Optional, add name to your routes. Allows you navigate by name instead of path
       path: '/',
-      // builder: (context, state) =>const  LoginScreen(),
-      builder: (context, state) =>  HomeScreen(),
+      builder: (context, state) =>const  LoginScreen(),
+      // builder: (context, state) =>  HomeScreen(),
     ),
     GoRoute(
       name: 'home',
