@@ -4,6 +4,11 @@ import 'package:get/get.dart';
 import '../../constatnts/color/app_colors.dart';
 import '../../constatnts/screen_size/app_screen_size.dart';
 import '../../widgets/app_text/app_text.dart';
+import 'component/hsotl_prfle.dart';
+import 'component/mng_apmnts.dart';
+import 'component/mng_dctrs.dart';
+import 'component/new_apmnts.dart';
+import 'component/upcoming_apmnts.dart';
 import 'controller/home_controller.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,7 +20,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.backgroundColor,
-      body: ScreenSize.width(context) < 1300
+      body: ScreenSize.width(context) < 1000
           ? _buildMobileLayout(context)
           : Obx(() => _buildWebLayout(context)),
     );
@@ -58,7 +63,7 @@ class HomeScreen extends StatelessWidget {
                           textSize: 30,
                         ),
                         SizedBox(
-                          height: ScreenSize.height(context) * 0.08,
+                          height: ScreenSize.height(context) * 0.2,
                         ),
 
                         //! Event List
@@ -191,7 +196,8 @@ class HomeScreen extends StatelessWidget {
               ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 150.0),
+                  // padding: const EdgeInsets.only(left: 100.0,right: 200.0),
+                  padding:  EdgeInsets.only(left: ScreenSize.width(context)*0.075,right: ScreenSize.width(context)*0.25),
                   child: secondHalfScreen(
                       homecontroller.selectedEvnetTag.value, context),
                 ),
@@ -222,98 +228,7 @@ class HomeScreen extends StatelessWidget {
     }
   }
 
-//!  upcoming Appointments
-  Widget upcmngApmnts(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        SizedBox(
-          height: ScreenSize.height(context) * 0.15,
-        ),
-        const MainTittleText(
-          tittle: "Upcoming Appointments",
-          textSize: 30,
-        ),
-      ],
-    );
-  }
-
-//! New Appointment
-  Widget newApmnts(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        SizedBox(
-          height: ScreenSize.height(context) * 0.15,
-        ),
-        const MainTittleText(
-          tittle: "New Appointment",
-          textSize: 30,
-        ),
-      ],
-    );
-  }
-
-//! Manage Appointments
-  Widget mngApmnts(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        SizedBox(
-          height: ScreenSize.height(context) * 0.15,
-        ),
-        const MainTittleText(
-          tittle: "Manage Appointments",
-          textSize: 30,
-        ),
-      ],
-    );
-  }
- 
-  //! Manage Doctors
-  Widget mngDctrs(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        SizedBox(
-          height: ScreenSize.height(context) * 0.15,
-        ),
-        const MainTittleText(
-          tittle: "Manage Doctors",
-          textSize: 30,
-        ),
-      ],
-    );
-  }
-
-
-//! Hospital Profile
-  Widget hsptsPrfle(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        SizedBox(
-          height: ScreenSize.height(context) * 0.15,
-        ),
-        const MainTittleText(
-          tittle: "Hospital Profile",
-          textSize: 30,
-        ),
-      ],
-    );
-  }
-
-
-
-
-
-
-
+//! Event Card Widget 
 
   Container eventCards(
       {required String eventIcon,
@@ -334,8 +249,11 @@ class HomeScreen extends StatelessWidget {
         ),
         boxShadow: const [
           BoxShadow(blurRadius: 4, offset: Offset(0, 4), color: Colors.grey),
+        // ],
         ],
         border: Border.all(color: cardBorderColr ?? Colors.transparent),
+       
+     
       ),
       child: Row(
         //  mainAxisAlignment: MainAxisAlignment.center,

@@ -20,7 +20,7 @@ class LoginScreen extends StatelessWidget {
       backgroundColor: AppColor.backgroundColor,
       body: Center(
         child: SingleChildScrollView(
-          child: ScreenSize.width(context) < 1300
+          child: ScreenSize.width(context) < 1200
               ? _buildMobileLayout(context)
               : _buildWebLayout(context),
         ),
@@ -143,7 +143,7 @@ class LoginScreen extends StatelessWidget {
                   width: ScreenSize.height(context) * 0.3,
                 ),
                 const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10.0),
+                  padding: EdgeInsets.only(top:10,bottom: 20.0),
                   child: AppTiitleText(
                     tittle: 'HEALTHCARE\nSUPPORT',
                     textSize: 15,
@@ -158,6 +158,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ],
             ),
+          SizedBox(width: 50,),
             Container(
               // height: ScreenSize.height(context) * 0.54,
               width: ScreenSize.width(context) * 0.3,

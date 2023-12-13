@@ -91,6 +91,10 @@ class AppColor {
   static const Color weekDaysColor = Color(0xffB5BEC6);
   static final Color calanderShadowColor = const Color(0xff000000).withOpacity(0.5);
 
+  //! Divider Color
+
+  static const Color dividerColor = Color(0xffD9D9D9);
+
 
 }
 
