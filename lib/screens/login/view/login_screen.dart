@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:patient_web/constatnts/color/app_colors.dart';
 
+import '../../../constatnts/dimensions/dimensions.dart';
 import '../../../constatnts/screen_size/app_screen_size.dart';
 import '../../../widgets/app_button/submit_button.dart';
 import '../../../widgets/app_text/app_text.dart';
@@ -12,18 +14,13 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Determine the screen width
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
 
-    print("****height***" + screenHeight.toString());
-    print("****width***" + screenWidth.toString());
 
     return Scaffold(
       backgroundColor: AppColor.backgroundColor,
       body: Center(
         child: SingleChildScrollView(
-          child: screenWidth < 1300
+          child: ScreenSize.width(context) < 1300
               ? _buildMobileLayout(context)
               : _buildWebLayout(context),
         ),
@@ -168,7 +165,7 @@ class LoginScreen extends StatelessWidget {
               padding: const EdgeInsets.only(
                   top: 40, left: 60, right: 60, bottom: 40),
               decoration: BoxDecoration(
-                color: const Color(0xFFEDF5F4),
+                color: AppColor.detailsContainerBgColor,
                 // color:  Colors.red,
                 borderRadius: BorderRadius.circular(30),
               ),
