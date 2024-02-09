@@ -130,10 +130,11 @@ Widget mngDctrs(BuildContext context) {
             flex: 3,
             child: SubmitButton(
                 onTap: () {},
+                isShadowEnable: false,
                 text: "Remove doctor profile",
                 backgroundColor: AppColor.screenBgColor,
                 textColor: Colors.black,
-                borderColor: AppColor.primaryBtnBorderColor),
+                borderColor:const  Color(0xFF79747E)),
           ),
         ],
       ),

@@ -14,8 +14,9 @@ class SubmitButton extends StatelessWidget {
   final Color? borderColor;
   final Color? activeColor;
   final EdgeInsets margin;
+  bool? isShadowEnable;
 
-  const SubmitButton(
+  SubmitButton(
       {Key? key,
       required this.text,
       this.activeText,
@@ -24,6 +25,7 @@ class SubmitButton extends StatelessWidget {
       required this.onTap,
       this.borderColor,
       this.activeColor,
+      this.isShadowEnable,
       this.margin = const EdgeInsets.symmetric(vertical: 7.5),
       this.backgroundColor})
       : super(key: key);
@@ -40,13 +42,15 @@ class SubmitButton extends StatelessWidget {
           border: Border.all(
             color: borderColor ?? AppColor.primaryBtnBorderColor,
           ),
-          boxShadow: const [
-            BoxShadow(
-              color: Color(0x80000000),
-              blurRadius: 4.0,
-              offset: Offset(0.0, 2.0), //? Offset(2, 2),
-            ),
-          ],
+          boxShadow: isShadowEnable == false
+              ? []
+              : [
+                  const BoxShadow(
+                    color: Color(0x80000000),
+                    blurRadius: 4.0,
+                    offset: Offset(0.0, 2.0), //? Offset(2, 2),
+                  ),
+                ],
           // gradient: btnGradient
         ),
         child: Padding(
