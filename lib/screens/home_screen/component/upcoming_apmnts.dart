@@ -18,7 +18,7 @@ Widget upcmngApmnts(BuildContext context) {
         textSize: 30,
       ),
       const SizedBox(
-        height: 25,
+        height: 05,
       ),
       const Divider(
         thickness: 1,
@@ -31,17 +31,20 @@ Widget upcmngApmnts(BuildContext context) {
           time: "8:00 AM",
           detilas: "General Physician: Dr. John Doe",
           patientName: "Patient-name-01"),
-          const SizedBox(height: 20,),
-          apmntDetailsWidget(
+      const SizedBox(
+        height: 20,
+      ),
+      apmntDetailsWidget(
           time: "8:00 AM",
           detilas: "Radiology - Bladder: Dr. Prashant",
           patientName: "Patient-name-02"),
-          const SizedBox(height: 20,),
-          apmntDetailsWidget(
+      const SizedBox(
+        height: 20,
+      ),
+      apmntDetailsWidget(
           time: "8:30 AM",
           detilas: "General Physician: Dr. Hireki",
           patientName: "Patient-name-03"),
-        
     ],
   );
 }
@@ -50,7 +53,8 @@ apmntDetailsWidget(
     {required String time,
     required String detilas,
     required String patientName}) {
-  return Container(
+  return
+   Container(
     height: 100,
     decoration: BoxDecoration(
         color: AppColor.detailsContainerBgColor,
@@ -88,4 +92,5 @@ apmntDetailsWidget(
       ),
     ),
   );
+
 }

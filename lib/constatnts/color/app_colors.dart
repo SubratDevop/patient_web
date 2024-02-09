@@ -95,6 +95,8 @@ class AppColor {
 
   static const Color dividerColor = Color(0xffD9D9D9);
 
+  static const editNameColor = Color(0xFF49454F);
+
 
 }
 

@@ -56,14 +56,14 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         SizedBox(
-                          height: ScreenSize.height(context) * 0.1,
+                          height: ScreenSize.height(context) * 0.12,
                         ),
                         const MainTittleText(
                           tittle: "Hello Admin",
                           textSize: 30,
                         ),
                         SizedBox(
-                          height: ScreenSize.height(context) * 0.2,
+                          height: ScreenSize.height(context) * 0.12,
                         ),
 
                         //! Event List
@@ -197,7 +197,9 @@ class HomeScreen extends StatelessWidget {
               Expanded(
                 child: Padding(
                   // padding: const EdgeInsets.only(left: 100.0,right: 200.0),
-                  padding:  EdgeInsets.only(left: ScreenSize.width(context)*0.075,right: ScreenSize.width(context)*0.25),
+                  padding: EdgeInsets.only(
+                      left: ScreenSize.width(context) * 0.075,
+                      right: ScreenSize.width(context) * 0.05),
                   child: secondHalfScreen(
                       homecontroller.selectedEvnetTag.value, context),
                 ),
@@ -228,7 +230,7 @@ class HomeScreen extends StatelessWidget {
     }
   }
 
-//! Event Card Widget 
+//! Event Card Widget
 
   Container eventCards(
       {required String eventIcon,
@@ -249,11 +251,9 @@ class HomeScreen extends StatelessWidget {
         ),
         boxShadow: const [
           BoxShadow(blurRadius: 4, offset: Offset(0, 4), color: Colors.grey),
-        // ],
+          // ],
         ],
         border: Border.all(color: cardBorderColr ?? Colors.transparent),
-       
-     
       ),
       child: Row(
         //  mainAxisAlignment: MainAxisAlignment.center,
